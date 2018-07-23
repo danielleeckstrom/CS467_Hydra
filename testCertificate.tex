@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[papersize={8.5in,11in}, landscape, margin=.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{calligra}
+\usepackage[T1]{fontenc}
+\usepackage{eso-pic}
+%\usepackage{showframe}
+\usepackage{picture}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{layout}
+
+\pagenumbering{gobble}
+
+\title{Certificate}
+\author{Team Hydra - Caitlin Dudle, Danielle Eckstrom, So Yeon Jang }
+\date{Due 08/17/18}
+
+\begin{document}
+%\layout{}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{background.jpg}}
+
+\begin{center}
+\vspace*{.3in}
+\calligra \fontsize{75}{90}\selectfont Recipient Name \normalfont \normalsize \linebreak
+
+\vspace{2.7in}
+
+\calligra \fontsize{40}{48}\selectfont Award Type \normalfont \normalsize \linebreak
+
+\sffamily \fontsize{11}{13.2}\selectfont Award Time Awarded Date\normalfont \normalsize \linebreak
+
+\AddToShipoutPictureFG*{\put(330,90){\includegraphics[width=5cm]{signature.png}}}
+
+\vspace{.95in}
+\fontsize{11}{13.2} User First Name User Last Name
+
+\end{center}
+\end{document}
