@@ -1,0 +1,40 @@
+<h1>Adding a user</h1>
+<form id="addUser" action="/user" method="post">
+	<label for="fname">First name:</label>
+	<input type="text" id="fname" name="fname"/>
+	<br>
+	<label for="lname">Last name:</label>
+	<input type="text" id="lname" name="lname"/>
+	<br>
+	<label for="user_email">Email:</label>
+	<input type="email" id="user_email" name="user_email"/>
+	<br>
+	<label for="password">Password:</label>
+	<input type="text" id="user_password" name="user_password"/>
+	<br>
+	<label for="image_link">Signiture:</label>
+	<input type="file" id="image_link" name="image_link">
+	<br>
+	<input type="submit" value="Submit">
+</form>
+
+<br>
+<h1>Current Users:</h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+	</thead>
+	<tbody>
+		{{#each Users}}
+		<tr>
+			<td>{{fname}}</td>
+			<td>{{lname}}</td>
+			<td>{{user_email}}</td>
+			<td><button onclick="deleteUser({{u_id}})">Delete</button></td>
+			<td><a href="/user/{{u_id}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

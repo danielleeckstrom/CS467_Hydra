@@ -1,0 +1,5 @@
+<h1>Update administrator: {{Admins.admin_email}} </h1>
+<form id="update-admin" action="/admin" method="post">
+	Password: <input type="text" name="admin_password" value="{{Admin.admin_password}}"><br>
+</form>
+<button onclick="updateAdmin({{Admin.admin_id}})">Update</button>
