@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/topnav.css" >
+  </head>
+  <body>
+                   <!-- Navigation bar -->
+      <div class="topnav" id="myTopnav">
+             <a class="navbar-brand" href="index.html">Home</a>
+             <a href="/user-sign-in">User Sign In</a>
+             <a href="/admin-profile">Admin</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+
 <h1>Adding a administrator</h1>
 <form id="addAdmin" action="/admin" method="post">
 	<label for="admin_email">Email:</label>
@@ -25,3 +43,5 @@
 		{{/each}}
 	</tbody>
 </table>
+</body>
+</html>

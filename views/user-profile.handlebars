@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="/css/topnav.css" >
+        <link rel="stylesheet" type="text/css" media="all" href="/css/user-profile.css" >
+</head>
+  <body>
+                   <!-- Navigation bar -->
+      <div class="topnav" id="myTopnav">
+             <a class="navbar-brand" href="index.html">Home</a>
+             <a href="/user-sign-in">User Sign In</a>
+             <a href="/admin-profile">Admin</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+
+<div class="container-fluid background">
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 background-container">
+            <div id="volunteer-profile-container">
+                <h1>{{user.fname}}{{user.lname}}</h1>
+                <p>Welcome to Employee Recognition!</p>
+                <p>View awards you have previously given:</p>
+                <div>
+                        <button id="view-awards-btn" type="button" class="btn index-btn">View awards</button>
+                </div>
+                <br>
+                <p>Create an award: </p>
+                <div>
+                    <button id="create-award-link-btn" type="button" class="btn index-btn">Create award</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    $("#view-awards-btn").click(function () {
+        window.location.href = "/user-awards";
+    });
+    $("#create-award-link-btn").click(function () {
+        window.location.href = "/createAward";
+    });
+</script>
+</body>
+</html>

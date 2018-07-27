@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link rel="stylesheet" type="text/css" media="all" href="/css/main.css" > -->
+    <link rel="stylesheet" type="text/css" media="all" href="/css/topnav.css" >
+    <link rel="stylesheet" type="text/css" media="all" href="/css/user-sign-in.css" >
+</head>
+  <body>
+                   <!-- Navigation bar -->
+      <div class="topnav" id="myTopnav">
+             <a class="navbar-brand" href="index.html">Home</a>
+             <a href="/user-sign-in">User Sign In</a>
+             <a href="/admin-profile">Admin</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+
+<div id="user-sign-in-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3" align="left">
+		<h3>User sign in</h3>
+                <form class="sign-in-form" action="/user-sign-in" method="POST">
+                    <div class="form-fields-container">
+                        <label for="sign-in-email" name="txt">User name: </label>
+                        <input id="sign-in-email" type="text" name="user_email" placeholder="Enter you email here....">
+                    </div>
+                    <div class="form-fields-container">
+                        <label for="sign-in-password" name="txt">Password: </label>
+                        <input id="sign-in-password" type="password" name="user_password" placeholder="Enter password ....">
+                    </div>
+                    <div class="form-fields-container">
+                        <button class="btn user-login-btn" type="submit">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

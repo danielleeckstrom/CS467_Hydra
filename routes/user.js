@@ -1,6 +1,19 @@
 module.exports = function(){
     var express = require('express');
     var router = express.Router();
+    
+            /********************
+             * TopNav
+             ********************/
+            /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
 
 		function getUsers(res, mysql, context, complete){
 			mysql.pool.query(`

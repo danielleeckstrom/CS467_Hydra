@@ -1,6 +1,19 @@
 module.exports = function(){
     var express = require('express');
     var router = express.Router();
+    
+            /********************
+             * TopNav
+             ********************/
+            /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
 
 		function getAdmins(res, mysql, context, complete){
 			mysql.pool.query(`
@@ -38,23 +51,23 @@ module.exports = function(){
     /*Display all Admins*/
 
     router.get('/', function(req, res){
-			console.log("Rendering home page");
+	    console.log("Rendering home page");
         var callbackCount = 0;
         var context = {};
         context.jsscripts = ["deleteAdmin.js"];
         var mysql = req.app.get('mysql');
 
         function complete(){
-					console.log("Rendering delete page");
+			console.log("Rendering delete page");
             callbackCount++;
             if(callbackCount >= 1){
                 res.render('admin', context);
             }
 
         }
-				console.log("Query Database for Admins");
+		console.log("Query Database for Admins");
         getAdmins(res, mysql, context, complete);
-				console.log("Got Admins");
+		console.log("Got Admins");
     });
 
 		/* Display one Admin for updating */
@@ -64,7 +77,7 @@ module.exports = function(){
         var context = {};
         context.jsscripts = ["updateAdmin.js"];
         var mysql = req.app.get('mysql');
-				getAdmin(res, mysql, context, req.params.ID, complete);
+		getAdmin(res, mysql, context, req.params.ID, complete);
         function complete(){
             callbackCount++;
             if(callbackCount >= 1){

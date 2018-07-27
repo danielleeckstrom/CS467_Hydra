@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<body>
+
 <h1>Update {{Users.fname}} {{Users.lname}}: </h1>
 <form id="update-user" action="/user" method="post">
 	First name: <input type="text" name="fname" value="{{User.fname}}"><br>
@@ -5,3 +12,5 @@
 	Password: <input type="text" name="user_password" value="{{User.user_password}}"><br>
 </form>
 <button onclick="updateUser({{User.u_id}})">Update</button>
+</body>
+</html>

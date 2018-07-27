@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/topnav.css" >
+  </head>
+  <body>
+                   <!-- Navigation bar -->
+      <div class="topnav" id="myTopnav">
+             <a class="navbar-brand" href="index.html">Home</a>
+             <a href="/user-sign-in">User Sign In</a>
+             <a href="/admin-profile">Admin</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+
+<h3>Create a New Award:</h3>
+<form id="addaward" action="/createAward" method="post">
+
+    Select award type: 
+        <select name="aname"> 
+        {{#each Award_Type}}
+            <option value="{{at_id}}">{{award_name}}</option>
+        {{/each}}
+        </select><br> 
+
+    Award date: <input type="date" name="date" placeholder="YYYY-MM-DD"></br>
+    Award time:
+                        <input type="time" name="time" placeholder="hh:mm:ss"><br/>
+    Recipient's first name:
+                        <input type="text" name="r_fname"><br/>
+    Recipient's last name:
+                        <input type="text" name="r_lname"><br/>
+                    
+    Recipient's e-mail:<input type="email" name="r_email"><br/>
+
+    <input type="submit" value="Submit">
+</form>
+</br>
+</br>
+</br>
+To return to your profile:<a href="/user-profile"><button>Click here</button></a>
+</body>
+</html>

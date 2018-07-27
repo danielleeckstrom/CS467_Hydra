@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/topnav.css" >
+  </head>
+  <body>
+                   <!-- Navigation bar -->
+      <div class="topnav" id="myTopnav">
+             <a class="navbar-brand" href="index.html">Home</a>
+             <a href="/user-sign-in">User Sign In</a>
+             <a href="/admin-profile">Admin</a>
+             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+
+<h3 align="center">Award History</h3>
+<table>
+    <thead> 
+        <th>Award type</th> 
+        <th>Recipient first name</th>
+	<th>Recipient last name</th>
+        <th>Date of award</th>
+        <th>Time of award</th>
+	    <th>Recipient e-mail </th>
+    </thead> 
+    <tbody> 
+        {{#each Awards}} 
+        <tr> 
+            <td>{{aname}}</td>
+            <td>{{r_fname}} </td>
+            <td>{{r_lname}}</td> 
+            <td>{{prettydate}}</td>
+            <td>{{time}}</td>
+            <td>{{r_email}}</td>
+            <td><button onclick="deleteAward({{id}})">Delete</button></td>
+        </tr>
+        {{else}}
+        <b> No awards given!</b>
+        {{/each}} 
+    </tbody>
+</table>
+</br>
+</br>
+</br>
+To return to profile:<a href="/user-profile"><button>Click here</button></a>
+</body>
+</html>

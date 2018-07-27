@@ -1,0 +1,87 @@
+
+
+#title-text{
+  color: #f0f0f0;
+  padding-top: 10px;
+}
+
+.form-fields-container {
+  padding: 10px 0;
+}
+
+#admin-approval-container, #admin-sign-in-container {
+    background-color: #CD90EA;
+}
+
+.pending-organization {
+    margin-top:10px;
+    margin-bottom:10px;
+  padding: 10px 0;
+  padding-left:10px;
+  padding-right:10px;
+  background-color: #f0f0f0;
+}
+
+.background {
+    background-color: #CD90EA;
+}
+
+.background-container {
+    background-color:#f0f0f0;
+}
+
+#index-container {
+    background-color: #CD90EA;
+    padding-bottom: 20px;
+}
+
+.index-h2 {
+    color: #450364;
+}
+
+.index-btn {
+    color: #450364;
+    background-color: #f0f0f0;
+    border-color: #450364;
+    margin: 5px;
+    width: 200px;
+}
+
+.index-btn:hover, .index-btn:active, .index-btn:focus {
+        color: #CD90EA;
+        background-color: #8600C5;
+        border-color: #450364;
+}
+
+#user-sign-in-container {
+    background-color: lightslategray;
+    color: lightblue;
+}
+
+.user-login-btn {
+    color:green;
+    background-color: #f0f0f0;
+    border-color:black;
+    margin: 5px;
+    width: 200px;
+}
+
+.user-login-btn:hover, .user-login-btn:active, .user-login-btn:focus {
+        color: lightblue;
+        background-color:gray;
+        border-color:black;
+}
+
+.admin-btn {
+    color: #f0f0f0;
+    background-color: #8600C5;
+    border-color: #450364;
+    margin: 5px;
+    width: 200px;
+}
+
+.admin-btn:hover, .admin-btn:active, .admin-btn:focus {
+        color: #f0f0f0;
+        background-color: #450364;
+        border-color: #450364;
+}
