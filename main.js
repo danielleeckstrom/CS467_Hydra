@@ -23,6 +23,7 @@ app.use('/createAward', require('./routes/createAward.js'));
 app.use('/user-profile', require('./routes/user-profile.js'));
 app.use('/user-sign-in', require('./routes/user-sign-in.js'));
 app.use('/user-awards', require('./routes/user-awards.js'));
+app.use('/admin-sign-in', require('./routes/admin-sign-in.js'));
 app.use('/admin-profile', require('./routes/admin-profile.js'));
 app.use('/admin', require('./routes/admin.js'));
 app.use('/user', require('./routes/user.js'));

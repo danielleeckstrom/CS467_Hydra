@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--    <link rel="stylesheet" type="text/css" media="all" href="/css/main.css" > -->
     <link rel="stylesheet" type="text/css" media="all" href="/css/topnav.css" >
-    <link rel="stylesheet" type="text/css" media="all" href="/css/user-sign-in.css" >
+    <link rel="stylesheet" type="text/css" media="all" href="/css/admin-sign-in.css" >
 </head>
   <body>
                    <!-- Navigation bar -->
@@ -20,16 +20,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3" align="left">
-		<h3>Welcome to the User sign in page!</h3>
-		<p><i>To access your User account, enter your user name and password below.</i></p>
-                <form class="sign-in-form" action="/user-sign-in" method="POST">
+		<h3>Welcome to the Admin sign in page!</h3>
+		<p><i>To access your profile, enter your email and password below.</i></p>
+                <form class="sign-in-form" action="/admin-sign-in" method="POST">
                     <div class="form-fields-container">
-                        <label for="sign-in-email" name="txt">User name: </label>
-                        <input id="sign-in-email" type="text" name="user_email" placeholder="Enter your email here....">
+                        <label for="sign-in-email" name="txt">Email: </label>
+                        <input id="sign-in-email" type="text" name="admin_email" placeholder="Enter your email here....">
                     </div>
                     <div class="form-fields-container">
                         <label for="sign-in-password" name="txt">Password: </label>
-                        <input id="sign-in-password" type="password" name="user_password" placeholder="Enter password ....">
+                        <input id="sign-in-password" type="password" name="admin_password" placeholder="Enter password ....">
                     </div>
                     <div class="form-fields-container">
                         <button class="btn user-login-btn" type="submit">Sign In</button>

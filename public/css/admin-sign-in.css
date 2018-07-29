@@ -11,7 +11,7 @@ form {
 }
 
 /* Full-width input fields */
-input[name=user_email], input[type=password] {
+input[name=admin_email], input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
