@@ -1,0 +1,50 @@
+<br>
+<h1>Users sorted:</h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+	</thead>
+	<tbody>
+		{{#each Users}}
+		<tr>
+			<td>{{fname}}</td>
+			<td>{{lname}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<h1>number of award by year:</h1>
+<table>
+	<thead>
+		<th>Count</th>
+		<th>Year</th>
+	</thead>
+	<tbody>
+		{{#each Awards}}
+		<tr>
+			<td>{{Count}}</td>
+			<td>{{Year}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<h1>user sorted by year:</h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Year</th>
+	</thead>
+	<tbody>
+		{{#each Users_y}}
+		<tr>
+			<td>{{First_Name}}</td>
+			<td>{{Last_Name}}</td>
+			<td>{{Year}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
