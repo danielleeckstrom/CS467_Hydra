@@ -1,6 +1,23 @@
 module.exports = function(){
-    var express = require('express');
-    var router = express.Router();
+    const express = require('express');
+		const multer = require('multer');
+		const storage = multer.diskStorage({
+			destination: function(req, file, cb) {
+				cb(null, './uploads/');
+			},
+			filename: function(req, file, cb) {
+				cb(null, file.originalname);
+			}
+		});
+		const upload = multer({
+			storage: storage
+		});
+		const fs = require('fs');
+    const router = express.Router();
+		// var path = require('path');
+		// var busboy = requrie("then-busboy");
+		// var fileUpload = require('express-fileupload');
+
 
 		function getUsers(res, mysql, context, complete){
 			mysql.pool.query(`
@@ -77,24 +94,36 @@ module.exports = function(){
 
 		/* Adds a user, redirects to the action page after adding */
 
-    router.post('/', function(req, res){
-        var mysql = req.app.get('mysql');
-				console.log("mysql");
-        var sql = "INSERT INTO Users (fname, lname, user_email, user_password, image_link) VALUES (?,?,?,?,?)";
-				console.log("sql");
-        var inserts = [req.body.fname, req.body.lname, req.body.user_email, req.body.user_password, req.body.image_link];
-				console.log("insert");
-        sql = mysql.pool.query(sql,inserts,function(error, results, fields){
-            if(error){
-                res.write(JSON.stringify(error));
-                res.end();
-            }else{
-								console.log("Successfully added");
-                res.redirect('/user');
-            }
-        });
-
-    });
+    router.post('/', upload.single('image_link'), function(req, res){
+			console.log("file: " + JSON.stringify(req.file));
+	    var mysql = req.app.get('mysql');
+			console.log("mysql");
+			console.log(JSON.stringify(req.body));
+			var fname = req.body.fname;
+			var lname = req.body.lname;
+			var email = req.body.user_email;
+			var pass = req.body.user_password;
+			var file = req.file.path;
+			var data = fs.readFileSync(file);
+			var sql = "INSERT INTO Users (fname, lname, user_email, user_password, image_link) VALUES (?,?,?,?,?)";
+			console.log("sql");
+			console.log(JSON.stringify(fname));
+			console.log(JSON.stringify(lname));
+			console.log(JSON.stringify(email));
+			console.log(JSON.stringify(pass));
+			console.log(JSON.stringify(file));
+			var inserts = [fname, lname, email, pass, data];
+			console.log("insert");
+			sql = mysql.pool.query(sql,inserts,function(error, results, fields){
+					if(error){
+							res.write(JSON.stringify(error));
+							res.end();
+					}else{
+							console.log("Successfully added");
+							res.redirect('/user');
+					}
+			});
+		});
 
 		/* The URI that update data is sent to in order to update a user */
 

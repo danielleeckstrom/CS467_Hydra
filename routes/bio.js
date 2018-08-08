@@ -28,7 +28,8 @@ module.exports = function(){
 				SELECT Count(*) as Count,
 							Year(award_Date) as Year
 				FROM Awards
-				GROUP BY Year(award_Date);
+				GROUP BY Year(award_Date)
+				LIMIT 5;
 			`, function(error, results, fields){
 				if(error){
 

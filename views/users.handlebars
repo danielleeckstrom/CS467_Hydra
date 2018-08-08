@@ -1,5 +1,5 @@
 <h1>Adding a user</h1>
-<form id="addUser" action="/user" method="post">
+<form id="addUser" action="/user" method="post" enctype="multipart/form-data">
 	<label for="fname">First name:</label>
 	<input type="text" id="fname" name="fname"/>
 	<br>
@@ -12,7 +12,7 @@
 	<label for="password">Password:</label>
 	<input type="text" id="user_password" name="user_password"/>
 	<br>
-	<label for="image_link">Signiture:</label>
+	<label for="image_link">Signature:</label>
 	<input type="file" id="image_link" name="image_link">
 	<br>
 	<input type="submit" value="Submit">
