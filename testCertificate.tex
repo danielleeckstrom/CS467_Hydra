@@ -9,31 +9,45 @@
 \usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{layout}
+\usepackage{datatool}
+%\newcommand{\Pathway}{/Users/danielleeckstrom/Documents/School/}
+\DTLloaddb[noheader]{certs}{/Users/danielleeckstrom/Documents/School/certData.csv} %Creates a new database named certs with data from the certData.csv
 
+%/////////////////////////////////////////
 \pagenumbering{gobble}
-
 \title{Certificate}
 \author{Team Hydra - Caitlin Dudle, Danielle Eckstrom, So Yeon Jang }
 \date{Due 08/17/18}
+%/////////////////////////////////////////
 
 \begin{document}
+
+%/////////////////////////////////////////
+\DTLassign{certs}{1}{\RecipientName=Column1}
+\DTLassign{certs}{1}{\AwardType=Column2}
+\DTLassign{certs}{1}{\AwardTime=Column3}
+\DTLassign{certs}{1}{\UserName=Column4}
+%/////////////////////////////////////////
+
 %\layout{}
-\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{background.jpg}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{/Users/danielleeckstrom/Documents/School/background.jpg}}
 
 \begin{center}
 \vspace*{.3in}
-\calligra \fontsize{75}{90}\selectfont Recipient Name \normalfont \normalsize \linebreak
+\calligra \fontsize{75}{90}\selectfont \RecipientName \normalfont \normalsize \linebreak
 
-\vspace{2.7in}
+\vspace{2.9in}
 
-\calligra \fontsize{40}{48}\selectfont Award Type \normalfont \normalsize \linebreak
+\calligra \fontsize{40}{48}\selectfont \AwardType \normalfont \normalsize \linebreak
 
-\sffamily \fontsize{11}{13.2}\selectfont Award Time Awarded Date\normalfont \normalsize \linebreak
+\vspace{.2in}
 
-\AddToShipoutPictureFG*{\put(330,90){\includegraphics[width=5cm]{signature.png}}}
+\sffamily \fontsize{11}{13.2}\selectfont \AwardTime \normalfont \normalsize \linebreak
 
-\vspace{.95in}
-\fontsize{11}{13.2} User First Name User Last Name
+\AddToShipoutPictureFG*{\put(330,90){\includegraphics[width=5cm]{/Users/danielleeckstrom/Documents/School/signature.png}}}
+
+\vspace{.7in}
+\fontsize{11}{13.2} \UserName
 
 \end{center}
 \end{document}
