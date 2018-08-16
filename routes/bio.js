@@ -4,7 +4,7 @@ module.exports = function(){
 
 		function getUsersByRank(res, mysql, context, complete){
 			mysql.pool.query(`
-				SELECT fname, lname
+				SELECT fname, lname, COUNT(Awards.user_id) as count
 				FROM Users
 				INNER JOIN Awards ON Users.u_id = Awards.user_id
 				GROUP BY Users.u_id
